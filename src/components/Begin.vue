@@ -9,10 +9,10 @@
 export default {
   name: 'Begin',
   data() {
-     return {
-       btntext: "Verify",
-       showError: false
-     }
+    return {
+      btntext: "Verify",
+      showError: false
+    }
   },
   methods: {
     displayMaintenance () {
