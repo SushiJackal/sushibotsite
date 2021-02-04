@@ -66,9 +66,9 @@ export default {
 }
 
 .Begin button:active {
-  width: calc(var(--btnwidth) - 24px);
-  height: calc(var(--btnheight) - 8px);
-  font-size: calc(var(--fontsize) - 4px);
+  width: calc(var(--btnwidth) - 12px);
+  height: calc(var(--btnheight) - 4px);
+  font-size: calc(var(--fontsize) - 2px);
 }
 
 .Begin span {
@@ -79,7 +79,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
 }
 
 @media screen and (min-width: 768px) {
