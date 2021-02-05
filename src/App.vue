@@ -1,6 +1,7 @@
 <template>
-  <div id="wrapper">
-    <Begin/>
+  <div v-bind:style="{background: color}" id="wrapper">
+    <Theme @toggleTheme="updateTheme($event)"/>
+    <Begin v-bind:beginTheme="beginTheme"/>
     <div class="copyright">
       <p>Made with ❤ by Sushi⠀•⠀©2021</p>
     </div>
@@ -9,11 +10,31 @@
 
 <script>
 import Begin from './components/Begin.vue'
+import Theme from './components/Theme.vue'
 
 export default {
   name: 'App',
   components: {
+    Theme,
     Begin
+  },
+  data () {
+    return {
+      color: '#121717',
+      beginTheme: '#ffffff'
+    }
+  },
+  methods: {
+    updateTheme(light) {
+      if(light) {
+        this.color = '#ffffff'
+        this.beginTheme = '#333'
+      }
+      else {
+        this.color = '#121717'
+        this.beginTheme = '#ffffff'
+      }
+    }
   }
 }
 </script>
@@ -24,16 +45,11 @@ export default {
   padding: 0;
 }
 
-body {
-  background: #121717;
+#wrapper {
+  transition: background .35s;
 }
 
 #app {
-  height: 100vh;
-  width: 100vw;
-}
-
-#wrapper {
   height: 100vh;
   width: 100vw;
   position: relative;

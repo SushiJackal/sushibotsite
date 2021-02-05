@@ -1,7 +1,7 @@
 <template>
   <div class="Begin">
     <button @click="displayMaintenance">{{ btntext }}</button>
-    <span v-show="showError">UNDER CONSTRUCTION</span>
+    <span v-bind:style="{color: beginTheme}" v-show="showError">UNDER CONSTRUCTION</span>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   data() {
     return {
       btntext: "Verify",
-      showError: false
+      showError: false,
     }
   },
   methods: {
@@ -19,7 +19,8 @@ export default {
       this.btntext = 'Offline'
       this.showError = true;
     }
-  } 
+  },
+  props: ['beginTheme']
 }
 </script>
 
@@ -72,6 +73,7 @@ export default {
 }
 
 .Begin span {
+  transition: color .35s;
   justify-self: center;
   align-self: top;
   grid-row: 3;
