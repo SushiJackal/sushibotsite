@@ -29,32 +29,32 @@ export default {
 }
 
 .Theme img {
-  height: 50px;
-  width: 50px;
-  padding: 20px;
+  height: 35px;
+  width: 35px;
+  padding: 15px;
 }
 
 @media screen and (min-width: 768px) {
   .Theme img {
-    height: 60px;
-    width: 60px;
-    padding: 25px;
+    height: 45px;
+    width: 45px;
+    padding: 20px;
   }
 }
 
 @media screen and (min-width: 1025px) {
   .Theme img {
-    height: 70px;
-    width: 70px;
-    padding: 30px;
+    height: 55px;
+    width: 55px;
+    padding: 25px;
   }
 }
 
 @media screen and (min-width: 1921px) {
   .Theme img {
-    height: 80px;
-    width: 80px;
-    padding: 35px;
+    height: 65px;
+    width: 65px;
+    padding: 30px;
   }
 }
 </style>
