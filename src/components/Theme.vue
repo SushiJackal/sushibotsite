@@ -24,6 +24,7 @@ export default {
 
 <style>
 .Theme {
+  z-index: 1;
   position: absolute;
   right: 0;
 }

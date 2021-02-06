@@ -1,7 +1,7 @@
 <template>
   <div class="Begin">
     <button @click="displayMaintenance">{{ btntext }}</button>
-    <span v-bind:style="{color: beginTheme}" v-show="showError">UNDER CONSTRUCTION</span>
+    <!-- <span v-bind:style="{color: beginTheme}" v-show="showError">UNDER CONSTRUCTION</span> -->
   </div>
 </template>
 
@@ -16,8 +16,9 @@ export default {
   },
   methods: {
     displayMaintenance () {
-      this.btntext = 'Offline'
-      this.showError = true;
+      //this.btntext = 'Offline'
+      this.showError = true
+      this.$emit('begin')
     }
   },
   props: ['beginTheme']
@@ -28,6 +29,8 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 .Begin {
+  position: fixed;
+  width:100vw;
   height: 100vh;
   display: grid;
   grid-template-columns: auto;

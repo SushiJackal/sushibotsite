@@ -1,7 +1,15 @@
 <template>
   <div v-bind:style="{background: color}" id="wrapper">
     <Theme @toggleTheme="updateTheme($event)"/>
-    <Begin v-bind:beginTheme="beginTheme"/>
+
+    <transition name="fade">
+      <Begin key="ONE" v-show="showBegin" @begin="showBegin = false" v-bind:beginTheme="beginTheme"/>
+    </transition>
+
+    <transition name="fade">
+      <Begin key="TWO" v-show="!showBegin"/>
+    </transition>
+
     <div class="copyright">
       <p>Made with ❤ by Sushi⠀•⠀©2021</p>
     </div>
@@ -21,18 +29,19 @@ export default {
   data () {
     return {
       color: '#121717',
-      beginTheme: '#ffffff'
+      beginTheme: '#e6fffc',
+      showBegin: true
     }
   },
   methods: {
     updateTheme(light) {
       if(light) {
-        this.color = '#ffffff'
+        this.color = '#e6fffc'
         this.beginTheme = '#333'
       }
       else {
         this.color = '#121717'
-        this.beginTheme = '#ffffff'
+        this.beginTheme = '#e6fffc'
       }
     }
   }
@@ -45,7 +54,30 @@ export default {
   padding: 0;
 }
 
+
+.fade-leave-active {
+  transition: all .4s cubic-bezier(.6,.45,.7,1);
+}
+
+.fade-enter-active {
+  transition: all .65s cubic-bezier(0,0,.7,1);
+}
+
+.fade-leave-to {
+  transform: translateX(-80%);
+  opacity: 0;
+}
+
+.fade-enter-from {
+  transform: translateX(90%);
+  opacity: 0;
+}
+
+
+
 #wrapper {
+  height: 100vh;
+  width: 100vw;
   transition: background .35s;
 }
 
@@ -73,17 +105,29 @@ export default {
   .copyright {
     font-size: 22px;
   }
+
+  .fade-enter-active {
+    transition: all .6s cubic-bezier(0,0,.7,1);
+  }
 }
 
 @media screen and (min-width: 1025px) {
   .copyright {
     font-size: 26px;
   }
+
+  .fade-enter-active {
+    transition: all .55s cubic-bezier(0,0,.7,1);
+  }
 }
 
 @media screen and (min-width: 1921px) {
   .copyright {
     font-size: 30px;
+  }
+
+  .fade-enter-active {
+    transition: all .5s cubic-bezier(0,0,.7,1);
   }
 }
 </style>
