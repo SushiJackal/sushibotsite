@@ -3,11 +3,11 @@
     <Theme @toggleTheme="updateTheme($event)"/>
 
     <transition name="fade">
-      <Begin key="ONE" v-show="showBegin" @begin="showBegin = false" v-bind:beginTheme="beginTheme"/>
+      <Begin v-show="showBegin" @begin="showBegin = false" v-bind:theme="theme"/>
     </transition>
 
     <transition name="fade">
-      <Begin key="TWO" v-show="!showBegin"/>
+      <Card v-show="!showBegin" v-bind:cardStyles="cardStyles"/>
     </transition>
 
     <div class="copyright">
@@ -19,29 +19,40 @@
 <script>
 import Begin from './components/Begin.vue'
 import Theme from './components/Theme.vue'
+import Card from './components/Card.vue'
 
 export default {
   name: 'App',
   components: {
     Theme,
-    Begin
+    Begin,
+    Card
   },
   data () {
     return {
       color: '#121717',
-      beginTheme: '#e6fffc',
-      showBegin: true
+      theme: '#fff',
+      showBegin: true,
+      cardStyles: {
+        backgroundColor: '#222327'
+      }
     }
   },
   methods: {
     updateTheme(light) {
       if(light) {
-        this.color = '#e6fffc'
-        this.beginTheme = '#333'
+        this.color = '#fff'
+        this.theme = '#333'
+        this.cardStyles = {
+          backgroundColor: '#dbecea'
+        }
       }
       else {
         this.color = '#121717'
-        this.beginTheme = '#e6fffc'
+        this.theme = '#fff'
+        this.cardStyles = {
+          backgroundColor: '#222327'
+        }
       }
     }
   }

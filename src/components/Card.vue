@@ -1,0 +1,50 @@
+<template>
+  <div class="Card">
+    <div v-bind:style="{backgroundColor: cardStyles.backgroundColor}" class="inner">
+
+    </div>
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Card',
+  data() {
+    return {
+      
+    }
+  },
+  methods: {
+    
+  },
+  props: ['cardStyles']
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+.Card {
+  position: fixed;
+  width:100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 25px auto 25px;
+  grid-template-rows: 15% 450px auto;
+}
+
+.inner {
+  justify-self: center;
+  align-self: center;
+  grid-row: 2;
+  grid-column: 2;
+  width: 100%;
+  height: 100%;
+  background-color: #222327;
+  border: 0;
+  border-radius: 25px;
+  transition: background-color .35s;
+}
+
+</style>

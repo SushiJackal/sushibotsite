@@ -1,7 +1,7 @@
 <template>
   <div class="Begin">
     <button @click="displayMaintenance">{{ btntext }}</button>
-    <!-- <span v-bind:style="{color: beginTheme}" v-show="showError">UNDER CONSTRUCTION</span> -->
+    <!-- <span v-bind:style="{color: theme}" v-show="showError">UNDER CONSTRUCTION</span> -->
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
       this.$emit('begin')
     }
   },
-  props: ['beginTheme']
+  props: ['theme']
 }
 </script>
 
