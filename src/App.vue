@@ -60,7 +60,7 @@ export default {
 }
 
 .fade-enter-active {
-  transition: all .65s cubic-bezier(0,0,.7,1);
+  transition: all .55s cubic-bezier(0,0,.7,1);
 }
 
 .fade-leave-to {
