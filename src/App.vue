@@ -65,13 +65,12 @@ export default {
   padding: 0;
 }
 
-
 .fade-leave-active {
-  transition: all .4s cubic-bezier(.6,.45,.7,1);
+  transition: all .35s cubic-bezier(.6,.45,.7,1);
 }
 
 .fade-enter-active {
-  transition: all .55s cubic-bezier(0,0,.7,1);
+  transition: all .5s cubic-bezier(0,0,.7,1);
 }
 
 .fade-leave-to {
@@ -80,11 +79,9 @@ export default {
 }
 
 .fade-enter-from {
-  transform: translateX(90%);
+  transform: translateX(130%);
   opacity: 0;
 }
-
-
 
 #wrapper {
   height: 100vh;
