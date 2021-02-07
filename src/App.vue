@@ -45,7 +45,7 @@ export default {
         this.theme = '#333'
         this.cardStyles = {
           backgroundColor: '#dbecea',
-          filter: 'drop-shadow(12px 12px 4px #ccd)'
+          filter: 'drop-shadow(12px 12px 4px #dde)'
         }
       }
       else {

@@ -30,7 +30,7 @@ export default {
   width:100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 25px auto 25px;
+  grid-template-columns: 10% auto 10%;
   grid-template-rows: 13% 420px auto;
 }
 
@@ -50,17 +50,23 @@ export default {
 
 @media screen and (min-width: 768px) {
   .Card {
-    grid-template-columns: 250px auto 250px;
-    grid-template-rows: 15% 750px auto;
+    grid-template-columns: 23% auto 23%;
+    grid-template-rows: 15% 50% auto;
   }
 }
 
 @media screen and (min-width: 1025px) {
-  
+  .Card {
+    grid-template-columns: 32% auto 32%;
+    grid-template-rows: 15% 55% auto;
+  }
 }
 
 @media screen and (min-width: 1921px) {
-  
+  .Card {
+    grid-template-columns: 38% auto 38%;
+    grid-template-rows: 15% 55% auto;
+  }
 }
 
 </style>
