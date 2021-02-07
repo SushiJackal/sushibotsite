@@ -3,11 +3,11 @@
     <Theme @toggleTheme="updateTheme($event)"/>
 
     <transition name="fade">
-      <Begin v-show="showBegin" @begin="showBegin = false" v-bind:theme="theme"/>
+      <Begin v-show="showBegin" @begin="begin" v-bind:theme="theme"/>
     </transition>
 
     <transition name="fade">
-      <Card v-show="!showBegin" v-bind:cardStyles="cardStyles"/>
+      <Card v-show="!showBegin" v-bind:cardStyles="cardStyles" v-bind:step="step"/>
     </transition>
 
     <div class="copyright">
@@ -34,8 +34,9 @@ export default {
       theme: '#fff',
       showBegin: true,
       cardStyles: {
-        backgroundColor: '#222327'
-      }
+        backgroundColor: '#1d1e20'
+      },
+      step: 0
     }
   },
   methods: {
@@ -44,7 +45,7 @@ export default {
         this.color = '#fff'
         this.theme = '#333'
         this.cardStyles = {
-          backgroundColor: '#dbecea',
+          backgroundColor: '#f4f2f7',
           filter: 'drop-shadow(12px 12px 4px #dde)'
         }
       }
@@ -52,10 +53,14 @@ export default {
         this.color = '#121717'
         this.theme = '#fff'
         this.cardStyles = {
-          backgroundColor: '#222327',
+          backgroundColor: '#1d1e20',
           filter: 'drop-shadow(12px 12px 4px #111116)'
         }
       }
+    },
+    begin() {
+      this.showBegin = false
+      this.step = 1
     }
   }
 }
