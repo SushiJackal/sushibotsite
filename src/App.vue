@@ -44,14 +44,16 @@ export default {
         this.color = '#fff'
         this.theme = '#333'
         this.cardStyles = {
-          backgroundColor: '#dbecea'
+          backgroundColor: '#dbecea',
+          filter: 'drop-shadow(12px 12px 4px #ccd)'
         }
       }
       else {
         this.color = '#121717'
         this.theme = '#fff'
         this.cardStyles = {
-          backgroundColor: '#222327'
+          backgroundColor: '#222327',
+          filter: 'drop-shadow(12px 12px 4px #111116)'
         }
       }
     }
