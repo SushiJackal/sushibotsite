@@ -1,7 +1,7 @@
 <template>
   <div class="Card">
     <div v-bind:style="cardStyles" class="inner">
-      <div id="title"><h1><!--STEP {{step}}-->OFFLINE</h1></div>
+      <div id="titlewrapper"><div id="title"><h1><!--STEP {{step}}-->OFFLINE</h1></div></div>
       <div id="content">
         <Question/> <!-- ONLY PLACEHOLDER TO TEST, THIS HAS TO BE INSTANTIATED DYNAMICALLY PER CARD -->
       </div>
@@ -54,6 +54,8 @@ export default {
   border-radius: 25px;
   transition: background-color .35s, filter .35s;
   filter: drop-shadow(12px 12px 4px #111116);
+  display: flex;
+  flex-flow: column;
 }
 
 @keyframes GradientFade {
@@ -74,7 +76,6 @@ export default {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom: 3px solid #6195e2;
-  float: right;
 }
 
 
@@ -115,6 +116,19 @@ export default {
     border-bottom: 4.5px solid #6195e2;
     margin: 22px 30px;
   }
+}
+
+#title {
+  display: block;
+  float: right;
+}
+
+#titlewrapper {
+  overflow: auto;
+}
+
+#content {
+  flex-grow: 1;
 }
 
 </style>

@@ -9,5 +9,8 @@ export default {
 </script>
 
 <style>
-    
+.Question {
+  height: 100%;
+  width: 100%;
+}
 </style>
