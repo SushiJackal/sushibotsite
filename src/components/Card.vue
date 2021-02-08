@@ -2,19 +2,26 @@
   <div class="Card">
     <div v-bind:style="cardStyles" class="inner">
       <div id="title"><h1><!--STEP {{step}}-->OFFLINE</h1></div>
-      <div id="content"></div>
+      <div id="content">
+        <Question/> <!-- ONLY PLACEHOLDER TO TEST, THIS HAS TO BE INSTANTIATED DYNAMICALLY PER CARD -->
+      </div>
     </div>
 
   </div>
 </template>
 
 <script>
+import Question from './Question.vue' //ONLY PLACEHOLDER TO TEST, THIS HAS TO BE IMPORTED DYNAMICALLY PER CARD
+
 export default {
   name: 'Card',
   data() {
     return {
       
     }
+  },
+  components : {
+    Question //ONLY PLACEHOLDER TO TEST, THIS HAS TO BE IMPORTED DYNAMICALLY PER CARD
   },
   methods: {
     
